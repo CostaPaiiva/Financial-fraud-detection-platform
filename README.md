@@ -90,7 +90,50 @@ Machine Learning
 Score de Risco
    ↓
 Dashboard Streamlit
+```
 
+---
+
+## Pipeline de Transformação
+
+A etapa de transformação é responsável por limpar, padronizar e enriquecer os dados da camada raw.
+
+Arquivo principal:
+```
+src/transformation/transform_transactions.py
+```
+Principais responsabilidades:
+
+- Carregar os dados brutos de `data/raw/transactions_raw.csv`
+- Tratar valores nulos
+- Padronizar campos textuais
+- Converter tipos de dados
+- Criar features analíticas
+- Criar features para Machine Learning
+- Validar regras de qualidade
+- Salvar os dados tratados em `data/processed/transactions_processed.csv`
+
+Features criadas:
+```
+transaction_date_only
+transaction_year
+transaction_month
+transaction_day
+transaction_day_of_week
+transaction_day_name
+is_weekend
+is_night_transaction
+is_business_hours
+amount_above_customer_avg
+amount_difference_from_avg
+amount_risk_level
+transaction_amount_category
+customer_activity_level
+rule_based_risk_score
+risk_level
+```
+
+---
 Estrutura do projeto
 financial-fraud-detection-platform/
 │
@@ -177,7 +220,10 @@ Password: fraud_password
 - [x] Geração de dataset simulado
 - [x] Camada raw
 - [x] Camada sample
-- [ ] Transformação de dados
+- [x] Transformação de dados
+- [x] Camada processed
+- [x] Feature engineering
+- [x] Testes de qualidade dos dados
 - [ ] Carga no PostgreSQL
 - [ ] SQL analítico
 - [ ] Machine Learning
