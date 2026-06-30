@@ -41,6 +41,31 @@ Este projeto simula uma plataforma completa de detecção de fraudes financeiras
 
 ---
 
+## Dataset
+
+O projeto utiliza um dataset simulado de transações financeiras, criado para representar um cenário realista de detecção de fraudes.
+
+Campos principais:
+
+- `transaction_id`: identificador único da transação
+- `customer_id`: identificador do cliente
+- `transaction_date`: data e hora da transação
+- `transaction_hour`: hora da transação
+- `amount`: valor financeiro da transação
+- `transaction_type`: tipo da transação
+- `merchant_category`: categoria do estabelecimento
+- `channel`: canal utilizado
+- `device_type`: tipo de dispositivo
+- `city`: cidade da transação
+- `country`: país da transação
+- `previous_transactions_count`: quantidade histórica de transações do cliente
+- `average_customer_amount`: valor médio de transação do cliente
+- `is_foreign_transaction`: indicador de transação internacional
+- `is_high_risk_country`: indicador de país de maior risco
+- `is_fraud`: variável alvo indicando fraude
+
+---
+
 ## Arquitetura do projeto
 
 ```text
@@ -144,16 +169,20 @@ Port: 5432
 Maintenance database: fraud_detection_db
 Username: fraud_user
 Password: fraud_password
-Status do projeto
- Estrutura inicial do projeto
- Docker Compose com PostgreSQL e pgAdmin
- Extração de dados
- Transformação de dados
- Carga no PostgreSQL
- SQL analítico
- Machine Learning
- Dashboard Streamlit
- Documentação final
+## Status do projeto
+
+- [x] Estrutura inicial do projeto
+- [x] Docker Compose com PostgreSQL e pgAdmin
+- [x] Extração de dados
+- [x] Geração de dataset simulado
+- [x] Camada raw
+- [x] Camada sample
+- [ ] Transformação de dados
+- [ ] Carga no PostgreSQL
+- [ ] SQL analítico
+- [ ] Machine Learning
+- [ ] Dashboard Streamlit
+- [ ] Documentação final
 Autor
 
 Projeto desenvolvido para fins de portfólio, com foco em Engenharia de Dados, Análise de Dados e Ciência de Dados.
